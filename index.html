@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Advanced Resume Builder</title>
+  <title>Pro Resume Builder</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-<h1 class="title">Advanced Resume Builder</h1>
+<h1 class="title">Pro Resume Builder</h1>
 
 <div class="container">
 
@@ -18,14 +18,13 @@
     <input id="name" placeholder="Full Name">
     <input id="email" placeholder="Email">
     <input id="phone" placeholder="Phone">
-
     <textarea id="summary" placeholder="Professional Summary"></textarea>
     <textarea id="skills" placeholder="Skills (comma separated)"></textarea>
     <textarea id="education" placeholder="Education"></textarea>
     <textarea id="experience" placeholder="Experience"></textarea>
 
     <div class="dynamic-section">
-      <h3>Projects <button onclick="addProject()">+ Add Project</button></h3>
+      <h3>Projects <button type="button" onclick="addProject()">+ Add Project</button></h3>
       <div id="projects-container"></div>
     </div>
 
@@ -39,9 +38,13 @@
       <input type="file" id="photo" accept="image/*" hidden>
     </label>
 
-    <label>Choose Color Accent:
+    <label>Color Accent:
       <input type="color" id="colorAccent" value="#6366f1">
     </label>
+
+    <div class="ats-suggestion">
+      <p><strong>ATS Suggestions:</strong> Try including keywords like JavaScript, Python, SQL, React, Agile</p>
+    </div>
 
     <button onclick="createResume()">Create Resume</button>
     <button class="secondary" onclick="resetForm()">Reset</button>
@@ -55,23 +58,20 @@
       <img id="r-photo" src="" alt="">
       <div>
         <h1 id="r-name">Your Name</h1>
-        <p id="r-contact">
-          <i class="fa-solid fa-envelope"></i> Email |
-          <i class="fa-solid fa-phone"></i> Phone
-        </p>
+        <p id="r-contact"><i class="fa-solid fa-envelope"></i> Email | <i class="fa-solid fa-phone"></i> Phone</p>
       </div>
     </div>
 
     <div class="resume-sections" id="resume-sections">
-      <div class="section" id="summary-section"><h3>Professional Summary</h3><p id="r-summary"></p></div>
-      <div class="section" id="skills-section"><h3>Skills</h3><p id="r-skills"></p></div>
-      <div class="section" id="projects-section"><h3>Projects</h3><div id="r-projects"></div></div>
-      <div class="section" id="education-section"><h3>Education</h3><p id="r-education"></p></div>
-      <div class="section" id="experience-section"><h3>Experience</h3><p id="r-experience"></p></div>
-      <div class="section" id="awards-section"><h3>Awards / Certificates</h3><p id="r-awards"></p></div>
-      <div class="section" id="hobbies-section"><h3>Hobbies</h3><p id="r-hobbies"></p></div>
-      <div class="section" id="languages-section"><h3>Languages Known</h3><p id="r-languages"></p></div>
-      <div class="section" id="interests-section"><h3>Interests</h3><p id="r-interests"></p></div>
+      <div class="section" id="summary-section" draggable="true"><h3>Professional Summary</h3><p id="r-summary"></p></div>
+      <div class="section" id="skills-section" draggable="true"><h3>Skills</h3><div id="r-skills" class="column-grid"></div></div>
+      <div class="section" id="projects-section" draggable="true"><h3>Projects</h3><div id="r-projects"></div></div>
+      <div class="section" id="education-section" draggable="true"><h3>Education</h3><p id="r-education"></p></div>
+      <div class="section" id="experience-section" draggable="true"><h3>Experience</h3><p id="r-experience"></p></div>
+      <div class="section" id="awards-section" draggable="true"><h3>Awards / Certificates</h3><p id="r-awards"></p></div>
+      <div class="section" id="hobbies-section" draggable="true"><h3>Hobbies</h3><p id="r-hobbies"></p></div>
+      <div class="section" id="languages-section" draggable="true"><h3>Languages Known</h3><p id="r-languages"></p></div>
+      <div class="section" id="interests-section" draggable="true"><h3>Interests</h3><p id="r-interests"></p></div>
     </div>
 
   </div>
@@ -81,3 +81,6 @@
 <script src="script.js"></script>
 </body>
 </html>
+
+  
+ 
