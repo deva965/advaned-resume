@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Advanced Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<h1 class="title">Advanced Resume Builder</h1>
+
+<div class="container">
+
+  <!-- FORM -->
+  <div class="form-card">
+    <h2>Enter Details</h2>
+
+    <input id="name" placeholder="Full Name">
+    <input id="email" placeholder="Email">
+    <input id="phone" placeholder="Phone">
+
+    <textarea id="summary" placeholder="Professional Summary"></textarea>
+    <textarea id="skills" placeholder="Skills (comma separated)"></textarea>
+    <textarea id="education" placeholder="Education"></textarea>
+    <textarea id="experience" placeholder="Experience"></textarea>
+
+    <div class="dynamic-section">
+      <h3>Projects <button onclick="addProject()">+ Add Project</button></h3>
+      <div id="projects-container"></div>
+    </div>
+
+    <textarea id="awards" placeholder="Awards / Certificates"></textarea>
+    <textarea id="hobbies" placeholder="Hobbies"></textarea>
+    <textarea id="languages" placeholder="Languages Known"></textarea>
+    <textarea id="interests" placeholder="Interests"></textarea>
+
+    <label class="upload">
+      <i class="fa-solid fa-camera"></i> Upload Photo
+      <input type="file" id="photo" accept="image/*" hidden>
+    </label>
+
+    <label>Choose Color Accent:
+      <input type="color" id="colorAccent" value="#6366f1">
+    </label>
+
+    <button onclick="createResume()">Create Resume</button>
+    <button class="secondary" onclick="resetForm()">Reset</button>
+    <button class="download" onclick="downloadResume()">Download PDF</button>
+  </div>
+
+  <!-- RESUME PREVIEW -->
+  <div class="resume-card" id="resume">
+
+    <div class="header">
+      <img id="r-photo" src="" alt="">
+      <div>
+        <h1 id="r-name">Your Name</h1>
+        <p id="r-contact">
+          <i class="fa-solid fa-envelope"></i> Email |
+          <i class="fa-solid fa-phone"></i> Phone
+        </p>
+      </div>
+    </div>
+
+    <div class="resume-sections" id="resume-sections">
+      <div class="section" id="summary-section"><h3>Professional Summary</h3><p id="r-summary"></p></div>
+      <div class="section" id="skills-section"><h3>Skills</h3><p id="r-skills"></p></div>
+      <div class="section" id="projects-section"><h3>Projects</h3><div id="r-projects"></div></div>
+      <div class="section" id="education-section"><h3>Education</h3><p id="r-education"></p></div>
+      <div class="section" id="experience-section"><h3>Experience</h3><p id="r-experience"></p></div>
+      <div class="section" id="awards-section"><h3>Awards / Certificates</h3><p id="r-awards"></p></div>
+      <div class="section" id="hobbies-section"><h3>Hobbies</h3><p id="r-hobbies"></p></div>
+      <div class="section" id="languages-section"><h3>Languages Known</h3><p id="r-languages"></p></div>
+      <div class="section" id="interests-section"><h3>Interests</h3><p id="r-interests"></p></div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
